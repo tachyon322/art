@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>art</title>
+</head>
+<body>
+    <h1>Верх Страницы</h1>
+    <ul class="main-container">
+        <li class="container active" data-index="1">
+            <div class="title-horizontal">Дизайн-концепты</div>
+            <div class="title-vertical">Дизайн-концепты</div>
+            <div class="content">Собираем референсы, предлагаем несколько дизайн-концептов на выбор. Это помогает понять стилистику будущего сайта и максимально точно найти контакт с вами на старте работ по визуалу</div>
+            <button class="scroll-top-x" title="Наверх">×</button>
+        </li>
+        <li class="container " data-index="2">
+            <div class="title-horizontal">Дизайн сайта</div>
+            <div class="title-vertical">Дизайн сайта</div>
+            <div class="content">После согласования выбранной стилистики дизайним сайт в FIGMA. Создаем UI-кит и готовим дизайн к разработке</div>
+            <button class="scroll-top-x" title="Наверх">×</button>
+        </li>
+        <li class="container" data-index="3">
+            <div class="title-horizontal">Разработка</div>
+            <div class="title-vertical">Разработка</div>
+            <div class="content">Разрабатываем сайт на выбранной вами платформе (WordPress, Tilda), подключаем метрики. После завершения работы переносим сайт на ваш сервер и предоставляем помощь в освоении всех функций (при необходимости подготовим подробную инструкцию)</div>
+            <button class="scroll-top-x" title="Наверх">×</button>
+        </li>
+    </ul>
+    <script>
+    document.querySelectorAll('.container').forEach(container => {
+        container.addEventListener('click', function(e) {
+            if (e.target.classList.contains('scroll-top-x')) return;
+            document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    document.querySelectorAll('.scroll-top-x').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.scrollTo({ top: 0 });
+        });
+    });
+    </script>
+</body>
+</html>
